@@ -1,8 +1,11 @@
-
 import 'package:flutter/material.dart';
 
 class CustomSendButton extends StatelessWidget {
-  const CustomSendButton({super.key, this.onTap, required this.label});
+  const CustomSendButton({
+    super.key,
+    this.onTap,
+    required this.label,
+  });
   final void Function()? onTap;
   final String label;
   @override
@@ -13,10 +16,17 @@ class CustomSendButton extends StatelessWidget {
         height: 50,
         width: 200,
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(10),
-          color: Colors.blue,
+            borderRadius: BorderRadius.circular(10),
+            color: const Color(0xff006A36)),
+        child: Center(
+          child: Text(
+            label,
+            style: const TextStyle(
+              color: Colors.white,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
         ),
-        child: Center(child: Text(label)),
       ),
     );
   }
