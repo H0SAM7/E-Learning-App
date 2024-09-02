@@ -1,9 +1,9 @@
 
-import 'package:e_learing/features/home/views/course_content_view.dart';
-import 'package:e_learing/features/home/widgets/course_image.dart';
-import 'package:e_learing/features/home/widgets/course_price.dart';
-import 'package:e_learing/features/home/widgets/course_title.dart';
-import 'package:e_learing/features/home/widgets/sub_title_course.dart';
+import 'package:e_learing/features/home/presentation/views/course_content_view.dart';
+import 'package:e_learing/features/home/presentation/widgets/course_image.dart';
+import 'package:e_learing/features/home/presentation/widgets/course_price.dart';
+import 'package:e_learing/features/home/presentation/widgets/course_title.dart';
+import 'package:e_learing/features/home/presentation/widgets/sub_title_course.dart';
 import 'package:flutter/material.dart';
 
 class CourseItemView extends StatelessWidget {

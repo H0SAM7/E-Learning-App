@@ -1,5 +1,5 @@
 import 'package:e_learing/core/utils/app_styles.dart';
-import 'package:e_learing/features/home/widgets/video_item_content.dart';
+import 'package:e_learing/features/home/presentation/widgets/video_item_content.dart';
 import 'package:flutter/material.dart';
 
 class SectionContent extends StatefulWidget {
@@ -40,10 +40,8 @@ class _SectionContentState extends State<SectionContent> {
         ),
         children: const [
           VideoItemContent(),
-          VideoItemContent(),
-          VideoItemContent(),
-          VideoItemContent(),
-          VideoItemContent(),
+   
+   
         ],
         onExpansionChanged: (bool expanded) {
           setState(() {

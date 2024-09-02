@@ -1,4 +1,4 @@
-import 'package:e_learing/features/home/widgets/section_content.dart';
+import 'package:e_learing/features/home/presentation/widgets/section_content.dart';
 import 'package:flutter/material.dart';
 
 class ContentListView extends StatelessWidget {
@@ -7,6 +7,7 @@ class ContentListView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
+        physics: const BouncingScrollPhysics(),
         itemCount: 15,
         itemBuilder: (context, index) {
           return const SectionContent();
