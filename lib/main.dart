@@ -1,6 +1,8 @@
+import 'package:e_learing/bloc_observer.dart';
 import 'package:e_learing/features/auth/manager/auth_cubit/auth_cubit.dart';
 import 'package:e_learing/features/auth/presentation/views/login_view.dart';
 import 'package:e_learing/features/auth/presentation/views/register_view.dart';
+import 'package:e_learing/features/auth/presentation/views/verification_view.dart';
 import 'package:e_learing/features/home/presentation/views/course_content_view.dart';
 import 'package:e_learing/features/home/presentation/views/home_view.dart';
 import 'package:e_learing/features/splash/views/start_view.dart';
@@ -15,6 +17,7 @@ import 'package:firebase_core/firebase_core.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  Bloc.observer = SimpleBlocObserever();
 
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
@@ -52,6 +55,8 @@ class ELearing extends StatelessWidget {
           RegisterView.id: (context) => const RegisterView(),
           LoginView.id: (context) => const LoginView(),
           StartView.id: (context) => const StartView(),
+                    VerificationView.id: (context) => const VerificationView(),
+
         },
         debugShowCheckedModeBanner: false,
         initialRoute: StartView.id,
