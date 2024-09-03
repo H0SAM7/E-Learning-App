@@ -22,6 +22,7 @@ void main() async {
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
+
   // WidgetsFlutterBinding.ensureInitialized();
   // SystemChrome.setSystemUIOverlayStyle(
   //   const SystemUiOverlayStyle(
@@ -45,21 +46,25 @@ class ELearing extends StatelessWidget {
           GlobalWidgetsLocalizations.delegate,
           GlobalCupertinoLocalizations.delegate,
         ],
-        supportedLocales: S.delegate.supportedLocales,
+        supportedLocales: const [
+          Locale('en', ''),
+          Locale('ar', ''),
+        ],
+        locale: const Locale('ar', ''), // set to Arabic by default
+
         routes: {
           HomeView.id: (context) => const HomeView(),
           CourseContentView.id: (context) => const CourseContentView(),
           VideoView.id: (context) => const VideoView(),
-          YoutubeVideoPlayer.id: (context) => const YoutubeVideoPlayer(),
+          //  YoutubeVideoPlayer.id: (context) => const YoutubeVideoPlayer(),
           //  VideoViewSection.id:(context)=>VideoViewSection(),
           RegisterView.id: (context) => const RegisterView(),
           LoginView.id: (context) => const LoginView(),
           StartView.id: (context) => const StartView(),
-                    VerificationView.id: (context) => const VerificationView(),
-
+          VerificationView.id: (context) => const VerificationView(),
         },
         debugShowCheckedModeBanner: false,
-        initialRoute: VerificationView.id,
+        initialRoute: StartView.id,
       ),
     );
   }

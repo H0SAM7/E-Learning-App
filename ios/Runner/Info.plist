@@ -5,7 +5,7 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleDisplayName</key>
-	<string>E Learing</string>
+	<string>E-Learing</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
@@ -13,7 +13,7 @@
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
-	<string>e_learing</string>
+	<string>E-Learing</string>
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
@@ -47,5 +47,10 @@
 	<true/>
 	<key>io.flutter.embedded_views_preview</key>
 	<string>YES</string>
+	<key>CFBundleLocalizations</key>
+	<array>
+    <string>en</string>
+    <string>ar</string>
+</array>
 </dict>
 </plist>

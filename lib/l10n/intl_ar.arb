@@ -1,0 +1,41 @@
+{
+    "invalid_email": "عنوان البريد الإلكتروني غير صالح.",
+    "user_disabled": "تم تعطيل حساب المستخدم.",
+    "user_not_found": "لم يتم العثور على مستخدم بهذا البريد الإلكتروني.",
+    "wrong_password": "كلمة المرور غير صحيحة.",
+    "email_already_in_use": "البريد مستخدم بالفعل.",
+    "weak_password": "كلمة المرور ضعيفة جدًا.",
+    "operation_not_allowed": "هذه العملية غير مسموح بها.",
+    "unexpected_auth_error": "حدث خطأ غير متوقع في المصادقة.",
+    "permission_denied": "تم رفض الإذن بالوصول.",
+    "document_not_found": "لم يتم العثور على المستند.",
+    "operation_aborted": "تم إجهاض العملية.",
+    "already_exists": "المستند موجود بالفعل.",
+    "resource_exhausted": "تم استنفاد الموارد.",
+    "service_unavailable": "الخدمة غير متاحة حاليًا.",
+    "deadline_exceeded": "انتهت مهلة العملية.",
+    "request_cancelled": "تم إلغاء الطلب.",
+    "unexpected_firestore_error": "حدث خطأ غير متوقع.",
+    "unknown_firebase_error": "حدث خطأ غير معروف.",
+    "ok":"موافق",
+      "auth_success": "تم تسجيل الدخول بنجاح",
+      "enter_name": "أدخل اسمك",
+      "enter_email": "أدخل بريدك الإلكتروني",
+      "enter_password": "أدخل كلمة المرور",
+      "enter_phone": "أدخل رقم هاتفك",
+      "enter_father_phone": "أدخل رقم هاتف والدك",
+      "have_account": "هل لديك حساب؟",
+      "send": "إرسال",
+      "error_title": "خطأ",
+      "email": "البريد الإلكتروني",
+      "password": "كلمة المرور",
+      "phone": "الهاتف",
+      "name":"الاسم",
+      "father_phone": "هاتف ولي الامر",
+      "forget_password":"نسيت كلمة المرور؟",
+      "sign_with_google":"الدخول بواسطة جوجل"
+
+    
+
+  }
+  

@@ -21,5 +21,65 @@ class MessageLookup extends MessageLookupByLibrary {
   String get localeName => 'en';
 
   final messages = _notInlinedMessages(_notInlinedMessages);
-  static Map<String, Function> _notInlinedMessages(_) => <String, Function>{};
+  static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "already_exists": MessageLookupByLibrary.simpleMessage(
+            "Document already exists in Firestore."),
+        "auth_success":
+            MessageLookupByLibrary.simpleMessage("Successfully logged in"),
+        "deadline_exceeded": MessageLookupByLibrary.simpleMessage(
+            "Firestore operation timed out."),
+        "document_not_found": MessageLookupByLibrary.simpleMessage(
+            "Document not found in Firestore."),
+        "email": MessageLookupByLibrary.simpleMessage("email"),
+        "email_already_in_use": MessageLookupByLibrary.simpleMessage(
+            "The email is already in use."),
+        "enter_email": MessageLookupByLibrary.simpleMessage("Enter your email"),
+        "enter_father_phone":
+            MessageLookupByLibrary.simpleMessage("Enter your Father Phone"),
+        "enter_name": MessageLookupByLibrary.simpleMessage("Enter your Name"),
+        "enter_password":
+            MessageLookupByLibrary.simpleMessage("Enter your password"),
+        "enter_phone": MessageLookupByLibrary.simpleMessage("Enter your phone"),
+        "error_title": MessageLookupByLibrary.simpleMessage("Error"),
+        "father_phone": MessageLookupByLibrary.simpleMessage("father phone"),
+        "forget_password":
+            MessageLookupByLibrary.simpleMessage("Forget Password ?"),
+        "have_account":
+            MessageLookupByLibrary.simpleMessage("You have account?"),
+        "invalid_email": MessageLookupByLibrary.simpleMessage(
+            "The email address is not valid."),
+        "name": MessageLookupByLibrary.simpleMessage("name"),
+        "ok": MessageLookupByLibrary.simpleMessage("Ok"),
+        "operation_aborted": MessageLookupByLibrary.simpleMessage(
+            "Firestore operation was aborted."),
+        "operation_not_allowed": MessageLookupByLibrary.simpleMessage(
+            "This operation is not allowed."),
+        "password": MessageLookupByLibrary.simpleMessage("password"),
+        "permission_denied": MessageLookupByLibrary.simpleMessage(
+            "Permission denied to access Firestore."),
+        "phone": MessageLookupByLibrary.simpleMessage("phone"),
+        "request_cancelled": MessageLookupByLibrary.simpleMessage(
+            "Firestore request was cancelled."),
+        "resource_exhausted": MessageLookupByLibrary.simpleMessage(
+            "Firestore resource exhausted."),
+        "send": MessageLookupByLibrary.simpleMessage("Send"),
+        "service_unavailable": MessageLookupByLibrary.simpleMessage(
+            "Firestore service is currently unavailable."),
+        "sign_with_google":
+            MessageLookupByLibrary.simpleMessage("Sign In With Google"),
+        "unexpected_auth_error": MessageLookupByLibrary.simpleMessage(
+            "An unexpected Firebase Auth error occurred."),
+        "unexpected_firestore_error": MessageLookupByLibrary.simpleMessage(
+            "An unexpected Firestore error occurred."),
+        "unknown_firebase_error": MessageLookupByLibrary.simpleMessage(
+            "An unknown Firebase error occurred."),
+        "user_disabled": MessageLookupByLibrary.simpleMessage(
+            "The user account has been disabled."),
+        "user_not_found": MessageLookupByLibrary.simpleMessage(
+            "No user found with this email."),
+        "weak_password":
+            MessageLookupByLibrary.simpleMessage("The password is too weak."),
+        "wrong_password":
+            MessageLookupByLibrary.simpleMessage("Incorrect password.")
+      };
 }

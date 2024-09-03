@@ -7,6 +7,7 @@ import 'package:e_learing/features/auth/manager/auth_cubit/auth_cubit.dart';
 import 'package:e_learing/features/auth/presentation/widgets/custom_send_button.dart';
 import 'package:e_learing/features/auth/presentation/widgets/custom_text_field.dart';
 import 'package:e_learing/features/home/presentation/views/home_view.dart';
+import 'package:e_learing/generated/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
@@ -26,6 +27,8 @@ class _LoginViewState extends State<LoginView> {
   String? email, password;
   @override
   Widget build(BuildContext context) {
+    final s=S.of(context);
+
     return BlocConsumer<AuthCubit, AuthState>(
       listener: (context, state) {
         if (state is AuthSuccess) {
@@ -34,12 +37,12 @@ class _LoginViewState extends State<LoginView> {
           showCustomAlert(
             context: context,
             type: AlertType.error,
-            title: 'Error',
+            title: s.error_title,
             description: state.errMessage,
             onPressed: () {
               Navigator.pop(context);
             },
-            actionTitle: 'ok',
+            actionTitle: s.ok,
           );
         }
       },
@@ -70,15 +73,15 @@ class _LoginViewState extends State<LoginView> {
                               height: 50,
                             ),
                             CustomTextFrom(
-                              hint: 'Enter your email',
-                              label: 'Email',
+                              hint: s.enter_email,
+                              label: s.email,
                               onChanged: (value) {
                                 email = value;
                               },
                             ),
                             CustomTextFrom(
-                              hint: 'Enter your password',
-                              label: 'Password',
+                              hint: s.enter_password,
+                              label: s.password,
                               onChanged: (value) {
                                 password = value;
                               },
@@ -90,14 +93,14 @@ class _LoginViewState extends State<LoginView> {
                                   Navigator.pushNamed(context, LoginView.id);
                                 },
                                 child: Text(
-                                  'Forget Password ?',
+                                  s.forget_password,
                                   style: AppStyles.style12,
                                 ),
                               ),
                             ),
                             const SizedBox(height: 50,),
-                            CustomSendButton(
-                              label: 'send',
+                            CustomAuthButton(
+                              label: s.send,
                               onTap: () async {
                                 if (formKey.currentState!.validate()) {
                                   await BlocProvider.of<AuthCubit>(context)

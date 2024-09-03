@@ -36,12 +36,12 @@ class StartView extends StatelessWidget {
                     log('User is currently signed out!');
                   } else {
                     if (user.emailVerified) {
-                      Navigator.pushNamed(context, HomeView.id);
+                      Navigator.pushReplacementNamed(context, HomeView.id);
                       log('User is signed in!');
                     } else if (!user.emailVerified) {
-                      Navigator.pushNamed(context, VerificationView.id);
+                      Navigator.pushReplacementNamed(context, VerificationView.id);
                     } else {
-                      Navigator.pushNamed(context, RegisterView.id);
+                      Navigator.pushReplacementNamed(context, RegisterView.id);
                     }
                   }
                 });

@@ -22,7 +22,7 @@ class VideoView extends StatelessWidget {
         children: [
           SizedBox(
             height: MediaQuery.sizeOf(context).height * .4,
-            child:  VideoPlayerScreen(),
+         //   child:  VideoPlayerScreen(),
           ),
           const VideoDescription(),
         ],
