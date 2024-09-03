@@ -70,8 +70,6 @@ class AuthCubit extends Cubit<AuthState> {
     }
   }
 
-
-
   Future<UserCredential?> signInWithGoogle() async {
     emit(AuthLoading());
     try {
@@ -103,7 +101,6 @@ class AuthCubit extends Cubit<AuthState> {
       final UserCredential userCredential =
           await FirebaseAuth.instance.signInWithCredential(credential);
 
-    
       emit(AuthSuccess());
       // Once signed in, return the UserCredential
       return userCredential;
@@ -114,11 +111,20 @@ class AuthCubit extends Cubit<AuthState> {
           errMessage: FirebaseFailure.fromFirebaseException(e as Exception)
               .errMessage
               .toString()));
-      
     }
     return null;
   }
 
-
+  Future<void> resetPassword(String email) async {
+    emit(AuthLoading());
+    try {
+      await FirebaseAuth.instance.sendPasswordResetEmail(email: email);
+      emit(AuthSuccess());
+    } catch (e) {
+      emit(AuthFailure(
+          errMessage: FirebaseFailure.fromFirebaseException(e as Exception)
+              .errMessage
+              .toString()));
+    }
+  }
 }
-

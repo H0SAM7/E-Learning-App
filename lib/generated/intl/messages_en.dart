@@ -22,10 +22,15 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "Log_in": MessageLookupByLibrary.simpleMessage("Login"),
         "already_exists": MessageLookupByLibrary.simpleMessage(
             "Document already exists in Firestore."),
         "auth_success":
             MessageLookupByLibrary.simpleMessage("Successfully logged in"),
+        "check_inbox": MessageLookupByLibrary.simpleMessage(
+            "Please Go to Your Email Inbox,\n and click on the link for verification"),
+        "create_new_acc":
+            MessageLookupByLibrary.simpleMessage("Create New Account"),
         "deadline_exceeded": MessageLookupByLibrary.simpleMessage(
             "Firestore operation timed out."),
         "document_not_found": MessageLookupByLibrary.simpleMessage(
@@ -48,6 +53,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("You have account?"),
         "invalid_email": MessageLookupByLibrary.simpleMessage(
             "The email address is not valid."),
+        "learn_any_time":
+            MessageLookupByLibrary.simpleMessage("Learn anytime and anywhere"),
         "name": MessageLookupByLibrary.simpleMessage("name"),
         "ok": MessageLookupByLibrary.simpleMessage("Ok"),
         "operation_aborted": MessageLookupByLibrary.simpleMessage(
@@ -65,8 +72,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "send": MessageLookupByLibrary.simpleMessage("Send"),
         "service_unavailable": MessageLookupByLibrary.simpleMessage(
             "Firestore service is currently unavailable."),
+        "sign_in": MessageLookupByLibrary.simpleMessage("Sign In"),
         "sign_with_google":
             MessageLookupByLibrary.simpleMessage("Sign In With Google"),
+        "start": MessageLookupByLibrary.simpleMessage("Start"),
         "unexpected_auth_error": MessageLookupByLibrary.simpleMessage(
             "An unexpected Firebase Auth error occurred."),
         "unexpected_firestore_error": MessageLookupByLibrary.simpleMessage(

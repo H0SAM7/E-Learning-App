@@ -1,3 +1,4 @@
+import 'package:e_learing/constants.dart';
 import 'package:flutter/material.dart';
 
 class CustomAuthButton extends StatelessWidget {
@@ -15,10 +16,10 @@ class CustomAuthButton extends StatelessWidget {
       onTap: onTap,
       child: Container(
         height: 50,
-        width: 200,
+        width: 300,
         decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(10),
-            color: const Color(0xff006A36)),
+            color: orangeColor),
         child: Center(
           child: Text(
             label,

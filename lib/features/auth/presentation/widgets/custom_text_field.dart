@@ -3,9 +3,10 @@ import 'package:flutter/material.dart';
 
 class CustomTextFrom extends StatelessWidget {
   const CustomTextFrom(
-      {super.key, this.onChanged, required this.label, required this.hint});
+      {super.key, this.onChanged, required this.label, required this.hint,  this.hide=false});
   final void Function(String)? onChanged;
   final String label, hint;
+  final bool hide;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -18,9 +19,11 @@ class CustomTextFrom extends StatelessWidget {
           return null;
         },
         onChanged: onChanged,
+        
         decoration: InputDecoration(
           label: Text(label),
           hintText: hint,
+          
           border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(10),
           ),

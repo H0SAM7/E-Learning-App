@@ -1,4 +1,3 @@
-
 import 'package:e_learing/core/utils/app_images.dart';
 import 'package:e_learing/generated/l10n.dart';
 import 'package:flutter/material.dart';
@@ -16,18 +15,22 @@ class GoogleButton extends StatelessWidget {
       onTap: onTap,
       child: Container(
         height: 50,
-        width: 200,
+        width: 300,
         decoration: BoxDecoration(
+          border: Border.all(width: .2),
             borderRadius: BorderRadius.circular(10),
-            color: const Color(0xff006A36)),
+            //color: orangeColor,
+            ),
         child: Center(
           child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
                Image.asset(Assets.imagesGoogle,width: 50,height: 40,) ,
                Text(
+                textAlign: TextAlign.center,
                 S.of(context).sign_with_google,
                 style: const TextStyle(
-                  color: Colors.white,
+                 // color: Colors.white,
                   fontWeight: FontWeight.bold,
                 ),
               ),

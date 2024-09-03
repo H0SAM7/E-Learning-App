@@ -12,7 +12,6 @@ import 'package:e_learing/features/home/presentation/views/home_view.dart';
 import 'package:e_learing/generated/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:rflutter_alert/rflutter_alert.dart';
 
 class RegisterView extends StatefulWidget {
@@ -65,13 +64,20 @@ class _RegisterViewState extends State<RegisterView> {
                             const SizedBox(
                               height: 50,
                             ),
-                            SvgPicture.asset(Assets.imagesLoginLogo),
+                            Image.asset(Assets.imagesRegister),
                             const SizedBox(
                               height: 50,
                             ),
-                            SvgPicture.asset(Assets.imagesWelcome),
+                            Text(
+                              S.of(context).sign_in,
+                              style: AppStyles.poppinsStylebold20,
+                            ),
                             const SizedBox(
-                              height: 50,
+                              height: 8,
+                            ),
+                            Text(
+                              S.of(context).create_new_acc,
+                              style: AppStyles.style12,
                             ),
                             CustomTextFrom(
                               hint: s.enter_name,
@@ -132,7 +138,10 @@ class _RegisterViewState extends State<RegisterView> {
                                 await BlocProvider.of<AuthCubit>(context)
                                     .signInWithGoogle();
                               },
-                            )
+                            ),
+                            const SizedBox(
+                              height: 24,
+                            ),
                           ],
                         ),
                       ),

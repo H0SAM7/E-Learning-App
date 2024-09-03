@@ -13,6 +13,10 @@ abstract class AppStyles {
       color: Colors.black.withOpacity(.5),
       fontFamily: GoogleFonts.poppins().fontFamily,
     );  
-    
+    static TextStyle styleMeduim24=TextStyle(
+      fontSize: 24,
+    fontWeight: FontWeight.bold,
+      fontFamily: GoogleFonts.rubik().fontFamily,
+    );  
        
 }

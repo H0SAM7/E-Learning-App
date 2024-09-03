@@ -22,10 +22,15 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "Log_in": MessageLookupByLibrary.simpleMessage("تسجيل دخول"),
         "already_exists":
             MessageLookupByLibrary.simpleMessage("المستند موجود بالفعل."),
         "auth_success":
             MessageLookupByLibrary.simpleMessage("تم تسجيل الدخول بنجاح"),
+        "check_inbox": MessageLookupByLibrary.simpleMessage(
+            "الرجاء الذهاب الي البريد الوارد وتاكيد الحساب\n من خلال الضغط علي الرابط المرسل"),
+        "create_new_acc":
+            MessageLookupByLibrary.simpleMessage("انشاء حساب جديد"),
         "deadline_exceeded":
             MessageLookupByLibrary.simpleMessage("انتهت مهلة العملية."),
         "document_not_found":
@@ -48,6 +53,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "have_account": MessageLookupByLibrary.simpleMessage("هل لديك حساب؟"),
         "invalid_email": MessageLookupByLibrary.simpleMessage(
             "عنوان البريد الإلكتروني غير صالح."),
+        "learn_any_time":
+            MessageLookupByLibrary.simpleMessage("تعلم في اي وقت وفي اي مكان "),
         "name": MessageLookupByLibrary.simpleMessage("الاسم"),
         "ok": MessageLookupByLibrary.simpleMessage("موافق"),
         "operation_aborted":
@@ -65,8 +72,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "send": MessageLookupByLibrary.simpleMessage("إرسال"),
         "service_unavailable":
             MessageLookupByLibrary.simpleMessage("الخدمة غير متاحة حاليًا."),
+        "sign_in": MessageLookupByLibrary.simpleMessage("انشاء حساب"),
         "sign_with_google":
             MessageLookupByLibrary.simpleMessage("الدخول بواسطة جوجل"),
+        "start": MessageLookupByLibrary.simpleMessage("البدء"),
         "unexpected_auth_error": MessageLookupByLibrary.simpleMessage(
             "حدث خطأ غير متوقع في المصادقة."),
         "unexpected_firestore_error":

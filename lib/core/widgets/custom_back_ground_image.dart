@@ -1,5 +1,3 @@
-
-import 'package:e_learing/core/utils/app_images.dart';
 import 'package:flutter/material.dart';
 
 class CustomBackGroundImage extends StatelessWidget {
@@ -15,10 +13,10 @@ final Widget child;
     return Container(
       width: size.width,
       decoration: const BoxDecoration(
-        image: DecorationImage(
-          image: AssetImage(Assets.imagesBackground),
-          fit: BoxFit.fill,
-        ),
+        // image: DecorationImage(
+        //   image: AssetImage(Assets.imagesBackground),
+        //   fit: BoxFit.fill,
+        // ),
       ),
       child: child
     );

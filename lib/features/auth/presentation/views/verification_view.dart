@@ -1,7 +1,7 @@
 import 'package:e_learing/core/utils/app_images.dart';
 import 'package:e_learing/core/utils/app_styles.dart';
+import 'package:e_learing/generated/l10n.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 
 class VerificationView extends StatelessWidget {
   const VerificationView({super.key});
@@ -13,14 +13,18 @@ class VerificationView extends StatelessWidget {
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
+          //    Expanded(child: Image.asset(Assets.imagesVerification)),
+
+          //  SvgPicture.asset(Assets.imagesVerifiedCheck),
           Expanded(child: Image.asset(Assets.imagesVerification)),
-          SvgPicture.asset(Assets.imagesVerifiedCheck),
-          const SizedBox(height: 50,),
+          const SizedBox(
+            height: 50,
+          ),
           Expanded(
             child: Center(
               child: Text(
                 textAlign: TextAlign.center,
-                'Please Go to Your Email ,\n and click on the link for verification',
+                S.of(context).check_inbox,
                 style: AppStyles.poppinsStylebold20,
               ),
             ),

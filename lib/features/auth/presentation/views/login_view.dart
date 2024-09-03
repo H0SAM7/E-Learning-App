@@ -6,11 +6,11 @@ import 'package:e_learing/core/widgets/custom_progress_hud.dart';
 import 'package:e_learing/features/auth/manager/auth_cubit/auth_cubit.dart';
 import 'package:e_learing/features/auth/presentation/widgets/custom_send_button.dart';
 import 'package:e_learing/features/auth/presentation/widgets/custom_text_field.dart';
+import 'package:e_learing/features/auth/presentation/widgets/google_button.dart';
 import 'package:e_learing/features/home/presentation/views/home_view.dart';
 import 'package:e_learing/generated/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:rflutter_alert/rflutter_alert.dart';
 
 class LoginView extends StatefulWidget {
@@ -27,7 +27,7 @@ class _LoginViewState extends State<LoginView> {
   String? email, password;
   @override
   Widget build(BuildContext context) {
-    final s=S.of(context);
+    final s = S.of(context);
 
     return BlocConsumer<AuthCubit, AuthState>(
       listener: (context, state) {
@@ -61,17 +61,20 @@ class _LoginViewState extends State<LoginView> {
                         key: formKey,
                         child: Column(
                           children: [
-                               const SizedBox(
-                              height: 50,
-                            ),
-                            SvgPicture.asset(Assets.imagesLoginLogo),
-                               const SizedBox(
-                              height: 50,
-                            ),
-                            SvgPicture.asset(Assets.imagesWelcome),
                             const SizedBox(
                               height: 50,
                             ),
+                            // SvgPicture.asset(Assets.imagesLoginLogo),
+                            Image.asset(Assets.imagesLogin),
+
+                            const SizedBox(
+                              height: 50,
+                            ),
+                            Text(
+                              S.of(context).Log_in,
+                              style: AppStyles.poppinsStylebold20,
+                            ),
+
                             CustomTextFrom(
                               hint: s.enter_email,
                               label: s.email,
@@ -86,7 +89,7 @@ class _LoginViewState extends State<LoginView> {
                                 password = value;
                               },
                             ),
-                               Align(
+                            Align(
                               alignment: Alignment.centerLeft,
                               child: TextButton(
                                 onPressed: () {
@@ -98,7 +101,9 @@ class _LoginViewState extends State<LoginView> {
                                 ),
                               ),
                             ),
-                            const SizedBox(height: 50,),
+                            const SizedBox(
+                              height: 50,
+                            ),
                             CustomAuthButton(
                               label: s.send,
                               onTap: () async {
@@ -108,6 +113,16 @@ class _LoginViewState extends State<LoginView> {
                                           email: email!, password: password!);
                                 }
                               },
+                            ),
+                            const SizedBox(height: 8,),
+                            GoogleButton(
+                              onTap: () async {
+                                await BlocProvider.of<AuthCubit>(context)
+                                    .signInWithGoogle();
+                              },
+                            ),
+                            const SizedBox(
+                              height: 24,
                             ),
                           ],
                         ),

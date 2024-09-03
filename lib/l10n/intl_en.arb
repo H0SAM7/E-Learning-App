@@ -33,7 +33,13 @@
     "phone": "phone",
     "father_phone": "father phone",
     "forget_password":"Forget Password ?",
-    "sign_with_google":"Sign In With Google"
+    "sign_with_google":"Sign In With Google",
+    "start":"Start",
+    "learn_any_time":"Learn anytime and anywhere",
+    "sign_in":"Sign In",
+    "Log_in":"Login",
+    "create_new_acc":"Create New Account",
+    "check_inbox":"Please Go to Your Email Inbox,\n and click on the link for verification"
     
   }
   
