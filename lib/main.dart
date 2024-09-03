@@ -59,7 +59,7 @@ class ELearing extends StatelessWidget {
 
         },
         debugShowCheckedModeBanner: false,
-        initialRoute: StartView.id,
+        initialRoute: VerificationView.id,
       ),
     );
   }

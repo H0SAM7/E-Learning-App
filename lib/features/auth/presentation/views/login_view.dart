@@ -1,4 +1,3 @@
-import 'dart:developer';
 import 'package:e_learing/core/utils/app_images.dart';
 import 'package:e_learing/core/utils/app_styles.dart';
 import 'package:e_learing/core/widgets/custom_alert.dart';
@@ -91,7 +90,7 @@ class _LoginViewState extends State<LoginView> {
                                   Navigator.pushNamed(context, LoginView.id);
                                 },
                                 child: Text(
-                                  'You have account ?',
+                                  'Forget Password ?',
                                   style: AppStyles.style12,
                                 ),
                               ),
