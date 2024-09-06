@@ -1,6 +1,10 @@
 import 'package:e_learing/core/utils/app_images.dart';
 import 'package:e_learing/core/utils/app_styles.dart';
+import 'package:e_learing/features/auth/presentation/views/register_view.dart';
+import 'package:e_learing/features/auth/presentation/widgets/timer_widget.dart';
+import 'package:e_learing/features/home/presentation/views/home_view.dart';
 import 'package:e_learing/generated/l10n.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 class VerificationView extends StatelessWidget {
@@ -14,7 +18,6 @@ class VerificationView extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           //    Expanded(child: Image.asset(Assets.imagesVerification)),
-
           //  SvgPicture.asset(Assets.imagesVerifiedCheck),
           Expanded(child: Image.asset(Assets.imagesVerification)),
           const SizedBox(
@@ -28,7 +31,17 @@ class VerificationView extends StatelessWidget {
                 style: AppStyles.poppinsStylebold20,
               ),
             ),
-          )
+          ),
+          TimerWidget(
+            onEnd: () {
+              Navigator.pushReplacementNamed(
+                  context,
+                  FirebaseAuth.instance.currentUser!.emailVerified
+                      ? HomeView.id
+                      : RegisterView.id);
+            },
+          ),
+          const SizedBox(height: 10,),
         ],
       ),
     );

@@ -23,14 +23,21 @@ class MessageLookup extends MessageLookupByLibrary {
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "Log_in": MessageLookupByLibrary.simpleMessage("تسجيل دخول"),
+        "add_course": MessageLookupByLibrary.simpleMessage("اضافة دورة جديدة"),
+        "add_lesson": MessageLookupByLibrary.simpleMessage("اضافة درس"),
         "already_exists":
             MessageLookupByLibrary.simpleMessage("المستند موجود بالفعل."),
         "auth_success":
             MessageLookupByLibrary.simpleMessage("تم تسجيل الدخول بنجاح"),
         "check_inbox": MessageLookupByLibrary.simpleMessage(
             "الرجاء الذهاب الي البريد الوارد وتاكيد الحساب\n من خلال الضغط علي الرابط المرسل"),
+        "complete_fields":
+            MessageLookupByLibrary.simpleMessage("قم بملئ جميع الحقول"),
+        "correct_number":
+            MessageLookupByLibrary.simpleMessage("قم بادخال رقم هاتف صحيح"),
         "create_new_acc":
             MessageLookupByLibrary.simpleMessage("انشاء حساب جديد"),
+        "creator": MessageLookupByLibrary.simpleMessage("المنشئ"),
         "deadline_exceeded":
             MessageLookupByLibrary.simpleMessage("انتهت مهلة العملية."),
         "document_not_found":
@@ -55,6 +62,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "عنوان البريد الإلكتروني غير صالح."),
         "learn_any_time":
             MessageLookupByLibrary.simpleMessage("تعلم في اي وقت وفي اي مكان "),
+        "lessons": MessageLookupByLibrary.simpleMessage("الدروس"),
         "name": MessageLookupByLibrary.simpleMessage("الاسم"),
         "ok": MessageLookupByLibrary.simpleMessage("موافق"),
         "operation_aborted":
@@ -65,6 +73,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "permission_denied":
             MessageLookupByLibrary.simpleMessage("تم رفض الإذن بالوصول."),
         "phone": MessageLookupByLibrary.simpleMessage("الهاتف"),
+        "price": MessageLookupByLibrary.simpleMessage("السعر"),
         "request_cancelled":
             MessageLookupByLibrary.simpleMessage("تم إلغاء الطلب."),
         "resource_exhausted":
@@ -76,6 +85,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "sign_with_google":
             MessageLookupByLibrary.simpleMessage("الدخول بواسطة جوجل"),
         "start": MessageLookupByLibrary.simpleMessage("البدء"),
+        "subTitle": MessageLookupByLibrary.simpleMessage("العنوان الفرعي"),
+        "title": MessageLookupByLibrary.simpleMessage("عنوان"),
         "unexpected_auth_error": MessageLookupByLibrary.simpleMessage(
             "حدث خطأ غير متوقع في المصادقة."),
         "unexpected_firestore_error":

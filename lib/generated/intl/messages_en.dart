@@ -23,14 +23,21 @@ class MessageLookup extends MessageLookupByLibrary {
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "Log_in": MessageLookupByLibrary.simpleMessage("Login"),
+        "add_course": MessageLookupByLibrary.simpleMessage("Add Course"),
+        "add_lesson": MessageLookupByLibrary.simpleMessage("Add Lesson"),
         "already_exists": MessageLookupByLibrary.simpleMessage(
             "Document already exists in Firestore."),
         "auth_success":
             MessageLookupByLibrary.simpleMessage("Successfully logged in"),
         "check_inbox": MessageLookupByLibrary.simpleMessage(
             "Please Go to Your Email Inbox,\n and click on the link for verification"),
+        "complete_fields":
+            MessageLookupByLibrary.simpleMessage("Complete All fields"),
+        "correct_number": MessageLookupByLibrary.simpleMessage(
+            "Please enter 11 digit phone number "),
         "create_new_acc":
             MessageLookupByLibrary.simpleMessage("Create New Account"),
+        "creator": MessageLookupByLibrary.simpleMessage("Creator"),
         "deadline_exceeded": MessageLookupByLibrary.simpleMessage(
             "Firestore operation timed out."),
         "document_not_found": MessageLookupByLibrary.simpleMessage(
@@ -55,6 +62,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "The email address is not valid."),
         "learn_any_time":
             MessageLookupByLibrary.simpleMessage("Learn anytime and anywhere"),
+        "lessons": MessageLookupByLibrary.simpleMessage("Lessons"),
         "name": MessageLookupByLibrary.simpleMessage("name"),
         "ok": MessageLookupByLibrary.simpleMessage("Ok"),
         "operation_aborted": MessageLookupByLibrary.simpleMessage(
@@ -65,6 +73,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "permission_denied": MessageLookupByLibrary.simpleMessage(
             "Permission denied to access Firestore."),
         "phone": MessageLookupByLibrary.simpleMessage("phone"),
+        "price": MessageLookupByLibrary.simpleMessage("Price"),
         "request_cancelled": MessageLookupByLibrary.simpleMessage(
             "Firestore request was cancelled."),
         "resource_exhausted": MessageLookupByLibrary.simpleMessage(
@@ -76,6 +85,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "sign_with_google":
             MessageLookupByLibrary.simpleMessage("Sign In With Google"),
         "start": MessageLookupByLibrary.simpleMessage("Start"),
+        "subTitle": MessageLookupByLibrary.simpleMessage("Subtitle"),
+        "title": MessageLookupByLibrary.simpleMessage("Title"),
         "unexpected_auth_error": MessageLookupByLibrary.simpleMessage(
             "An unexpected Firebase Auth error occurred."),
         "unexpected_firestore_error": MessageLookupByLibrary.simpleMessage(

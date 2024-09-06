@@ -2,6 +2,7 @@ import 'dart:developer';
 import 'package:bloc/bloc.dart';
 import 'package:e_learing/core/errors/failure.dart';
 import 'package:e_learing/core/helper/auth_helper.dart';
+import 'package:e_learing/features/admin/add_user/add_user.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:meta/meta.dart';
@@ -35,8 +36,12 @@ class AuthCubit extends Cubit<AuthState> {
           //  // 'username': username,
           //   // Add other fields as needed
           // });
-          emit(AuthSuccess());
+          // await FirebaseFirestore.instance.collection('users').add({
+          //   "email": email,
+          // });
 
+          emit(AuthSuccess());
+       
           log('User account created successfully.');
         } else {
           // If email verification fails, delete the user and throw an exception
@@ -127,4 +132,9 @@ class AuthCubit extends Cubit<AuthState> {
               .toString()));
     }
   }
+
+
+
+
+
 }

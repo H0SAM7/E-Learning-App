@@ -1,4 +1,6 @@
 import 'package:e_learing/bloc_observer.dart';
+import 'package:e_learing/features/admin/manager/admin_cubit/admin_cubit.dart';
+import 'package:e_learing/features/admin/views/add_course_view.dart';
 import 'package:e_learing/features/auth/manager/auth_cubit/auth_cubit.dart';
 import 'package:e_learing/features/auth/presentation/views/login_view.dart';
 import 'package:e_learing/features/auth/presentation/views/register_view.dart';
@@ -42,9 +44,13 @@ class ELearing extends StatelessWidget {
         BlocProvider(
           create: (context) => AuthCubit(),
         ),
+          BlocProvider(
+          create: (context) => AdminCubit(),
+        ),
         BlocProvider(
           create: (context) => LanguageCubit(),
         ),
+        
       ],
       child: BlocBuilder<LanguageCubit, Locale>(
         builder: (context, state) {
@@ -75,9 +81,10 @@ class ELearing extends StatelessWidget {
               LoginView.id: (context) => const LoginView(),
               StartView.id: (context) => const StartView(),
               VerificationView.id: (context) => const VerificationView(),
+                 AddCourseView.id: (context) => const AddCourseView(),
             },
             debugShowCheckedModeBanner: false,
-            initialRoute: StartView.id,
+            initialRoute: HomeView.id,
           );
         },
       ),

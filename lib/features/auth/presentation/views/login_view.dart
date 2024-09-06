@@ -85,6 +85,7 @@ class _LoginViewState extends State<LoginView> {
                             CustomTextFrom(
                               hint: s.enter_password,
                               label: s.password,
+                              isPasswordField: true,
                               onChanged: (value) {
                                 password = value;
                               },
@@ -114,7 +115,9 @@ class _LoginViewState extends State<LoginView> {
                                 }
                               },
                             ),
-                            const SizedBox(height: 8,),
+                            const SizedBox(
+                              height: 8,
+                            ),
                             GoogleButton(
                               onTap: () async {
                                 await BlocProvider.of<AuthCubit>(context)

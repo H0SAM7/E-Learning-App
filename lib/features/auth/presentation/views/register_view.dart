@@ -1,8 +1,10 @@
+import 'package:e_learing/core/models/user_model.dart';
 import 'package:e_learing/core/utils/app_images.dart';
 import 'package:e_learing/core/utils/app_styles.dart';
 import 'package:e_learing/core/widgets/custom_alert.dart';
 import 'package:e_learing/core/widgets/custom_back_ground_image.dart';
 import 'package:e_learing/core/widgets/custom_progress_hud.dart';
+import 'package:e_learing/features/admin/add_user/add_user.dart';
 import 'package:e_learing/features/auth/manager/auth_cubit/auth_cubit.dart';
 import 'package:e_learing/features/auth/presentation/views/login_view.dart';
 import 'package:e_learing/features/auth/presentation/widgets/custom_send_button.dart';
@@ -24,7 +26,7 @@ class RegisterView extends StatefulWidget {
 
 class _RegisterViewState extends State<RegisterView> {
   final GlobalKey<FormState> formKey = GlobalKey<FormState>();
-  String? email, password;
+  String? email, password, phone, fatherPhone, name;
 
   @override
   Widget build(BuildContext context) {
@@ -82,7 +84,9 @@ class _RegisterViewState extends State<RegisterView> {
                             CustomTextFrom(
                               hint: s.enter_name,
                               label: s.name,
-                              onChanged: (value) {},
+                              onChanged: (value) {
+                                name = value;
+                              },
                             ),
                             CustomTextFrom(
                               hint: s.enter_email,
@@ -94,6 +98,7 @@ class _RegisterViewState extends State<RegisterView> {
                             CustomTextFrom(
                               hint: s.enter_password,
                               label: s.password,
+                              isPasswordField: true,
                               onChanged: (value) {
                                 password = value;
                               },
@@ -101,12 +106,34 @@ class _RegisterViewState extends State<RegisterView> {
                             CustomTextFrom(
                               hint: s.enter_phone,
                               label: s.phone,
-                              onChanged: (value) {},
+                              onChanged: (value) {
+                                phone = value;
+                              },
+                              validator: (value) {
+                                if (value == null || value.isEmpty) {
+                                  return s.complete_fields;
+                                } else if (value.length != 11 &&
+                                    value != fatherPhone) {
+                                  return s.correct_number;
+                                }
+                                return null;
+                              },
                             ),
                             CustomTextFrom(
                               hint: s.enter_father_phone,
                               label: s.father_phone,
-                              onChanged: (value) {},
+                              onChanged: (value) {
+                                fatherPhone = value;
+                              },
+                              validator: (value) {
+                                if (value == null || value.isEmpty) {
+                                  return s.complete_fields;
+                                } else if (value.length != 11 &&
+                                    value != phone) {
+                                  return s.correct_number;
+                                }
+                                return null;
+                              },
                             ),
                             Align(
                               alignment: Alignment.centerLeft,
@@ -127,6 +154,13 @@ class _RegisterViewState extends State<RegisterView> {
                                   await BlocProvider.of<AuthCubit>(context)
                                       .register(
                                           email: email!, password: password!);
+                                  await addUser(
+                                      userModel: UserModel(
+                                          userName: name!,
+                                          email: email!,
+                                          phone: phone!,
+                                          fatherPhone: fatherPhone!),
+                                          );
                                 }
                               },
                             ),

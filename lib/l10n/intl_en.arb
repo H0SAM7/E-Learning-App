@@ -40,6 +40,14 @@
     "Log_in":"Login",
     "create_new_acc":"Create New Account",
     "check_inbox":"Please Go to Your Email Inbox,\n and click on the link for verification"
+      ,"complete_fields":"Complete All fields",
+    "correct_number":"Please enter 11 digit phone number ",
     
-  }
-  
+    "add_course":"Add Course",
+    "title": "Title",
+    "subTitle": "Subtitle",
+    "price": "Price",
+    "creator": "Creator",
+    "lessons": "Lessons",
+    "add_lesson":"Add Lesson"
+}

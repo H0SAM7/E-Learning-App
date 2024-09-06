@@ -1,5 +1,4 @@
-import 'package:e_learing/features/video/views/pod_player.dart';
-import 'package:e_learing/features/video/views/youtube_video_player.dart';
+
 import 'package:e_learing/features/video/widgets/video_desc.dart';
 import 'package:flutter/material.dart';
 

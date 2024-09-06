@@ -459,6 +459,96 @@ class S {
       args: [],
     );
   }
+
+  /// `Complete All fields`
+  String get complete_fields {
+    return Intl.message(
+      'Complete All fields',
+      name: 'complete_fields',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please enter 11 digit phone number `
+  String get correct_number {
+    return Intl.message(
+      'Please enter 11 digit phone number ',
+      name: 'correct_number',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Add Course`
+  String get add_course {
+    return Intl.message(
+      'Add Course',
+      name: 'add_course',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Title`
+  String get title {
+    return Intl.message(
+      'Title',
+      name: 'title',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Subtitle`
+  String get subTitle {
+    return Intl.message(
+      'Subtitle',
+      name: 'subTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Price`
+  String get price {
+    return Intl.message(
+      'Price',
+      name: 'price',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Creator`
+  String get creator {
+    return Intl.message(
+      'Creator',
+      name: 'creator',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Lessons`
+  String get lessons {
+    return Intl.message(
+      'Lessons',
+      name: 'lessons',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Add Lesson`
+  String get add_lesson {
+    return Intl.message(
+      'Add Lesson',
+      name: 'add_lesson',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
