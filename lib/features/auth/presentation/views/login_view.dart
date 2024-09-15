@@ -8,6 +8,7 @@ import 'package:e_learing/features/auth/presentation/widgets/custom_send_button.
 import 'package:e_learing/features/auth/presentation/widgets/custom_text_field.dart';
 import 'package:e_learing/features/auth/presentation/widgets/google_button.dart';
 import 'package:e_learing/features/home/presentation/views/home_view.dart';
+import 'package:e_learing/features/home/presentation/views/widgets/bottom_navigator_bar.dart';
 import 'package:e_learing/generated/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -32,7 +33,7 @@ class _LoginViewState extends State<LoginView> {
     return BlocConsumer<AuthCubit, AuthState>(
       listener: (context, state) {
         if (state is AuthSuccess) {
-          Navigator.pushReplacementNamed(context, HomeView.id);
+          Navigator.pushReplacementNamed(context, BottomNavigator.id);
         } else if (state is AuthFailure) {
           showCustomAlert(
             context: context,

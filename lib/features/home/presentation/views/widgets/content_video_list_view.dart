@@ -1,5 +1,5 @@
 
-import 'package:e_learing/features/home/presentation/widgets/video_item_content.dart';
+import 'package:e_learing/features/home/presentation/views/widgets/video_item_content.dart';
 import 'package:flutter/material.dart';
 
 class ContentVideosListView extends StatelessWidget {

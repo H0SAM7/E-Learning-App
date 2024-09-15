@@ -1,13 +1,16 @@
 import 'package:e_learing/bloc_observer.dart';
 import 'package:e_learing/features/admin/manager/admin_cubit/admin_cubit.dart';
 import 'package:e_learing/features/admin/views/add_course_view.dart';
+import 'package:e_learing/features/admin/views/add_quiz_view.dart';
 import 'package:e_learing/features/auth/manager/auth_cubit/auth_cubit.dart';
 import 'package:e_learing/features/auth/presentation/views/login_view.dart';
 import 'package:e_learing/features/auth/presentation/views/register_view.dart';
 import 'package:e_learing/features/auth/presentation/views/verification_view.dart';
 import 'package:e_learing/features/home/presentation/views/course_content_view.dart';
 import 'package:e_learing/features/home/presentation/views/home_view.dart';
+import 'package:e_learing/features/home/presentation/views/widgets/bottom_navigator_bar.dart';
 import 'package:e_learing/features/splash/views/start_view.dart';
+import 'package:e_learing/features/video/views/pod_player.dart';
 import 'package:e_learing/features/video/views/video_view.dart';
 import 'package:e_learing/firebase_options.dart';
 import 'package:e_learing/generated/l10n.dart';
@@ -25,12 +28,7 @@ void main() async {
     options: DefaultFirebaseOptions.currentPlatform,
   );
 
-  // WidgetsFlutterBinding.ensureInitialized();
-  // SystemChrome.setSystemUIOverlayStyle(
-  //   const SystemUiOverlayStyle(
-  //     statusBarColor: Colors.blueAccent,
-  //   ),
-  // );
+ 
   runApp(const ELearing());
 }
 
@@ -44,22 +42,21 @@ class ELearing extends StatelessWidget {
         BlocProvider(
           create: (context) => AuthCubit(),
         ),
-          BlocProvider(
+        BlocProvider(
           create: (context) => AdminCubit(),
         ),
         BlocProvider(
           create: (context) => LanguageCubit(),
         ),
-        
       ],
       child: BlocBuilder<LanguageCubit, Locale>(
         builder: (context, state) {
           return MaterialApp(
             theme: ThemeData(
-              // fontFamily: isArabic(context)
-              //     ? GoogleFonts.inter().fontFamily
-              //     : GoogleFonts.poppins().fontFamily,
-            ),
+                // fontFamily: isArabic(context)
+                //     ? GoogleFonts.inter().fontFamily
+                //     : GoogleFonts.poppins().fontFamily,
+                ),
             localizationsDelegates: const [
               S.delegate,
               GlobalMaterialLocalizations.delegate,
@@ -81,10 +78,14 @@ class ELearing extends StatelessWidget {
               LoginView.id: (context) => const LoginView(),
               StartView.id: (context) => const StartView(),
               VerificationView.id: (context) => const VerificationView(),
-                 AddCourseView.id: (context) => const AddCourseView(),
+              AddCourseView.id: (context) => const AddCourseView(),
+              PlayVideoFromYoutube.id: (context) =>
+                  const PlayVideoFromYoutube(),
+              BottomNavigator.id: (context) => const BottomNavigator(),
+                  AddQuizView.id: (context) => const AddQuizView(),
             },
             debugShowCheckedModeBanner: false,
-            initialRoute: HomeView.id,
+            initialRoute: StartView.id,
           );
         },
       ),

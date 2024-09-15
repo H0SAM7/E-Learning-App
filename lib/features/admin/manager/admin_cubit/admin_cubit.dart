@@ -4,6 +4,7 @@ import 'package:bloc/bloc.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:e_learing/core/errors/failure.dart';
 import 'package:e_learing/core/models/course_model.dart';
+import 'package:e_learing/core/models/quiz_model.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:meta/meta.dart';
@@ -28,7 +29,25 @@ class AdminCubit extends Cubit<AdminState> {
               .toString(),
         ),
       );
-      log('Error adding discount: $e');
+      log('Error adding course: $e');
+    }
+  }
+  
+  Future<void> addQuiz({required QuizModel quizModel}) async {
+    emit(AdminLoading());
+    try {
+      await firestore.collection('Quiz').add(quizModel.toMap());
+      emit(AdminSuccess());
+      log('adding done');
+    } catch (e) {
+      emit(
+        AdminFailure(
+          errMessage: FirebaseFailure.fromFirebaseException(e as Exception)
+              .errMessage
+              .toString(),
+        ),
+      );
+      log('Error adding Quiz: $e');
     }
   }
   

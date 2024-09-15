@@ -3,14 +3,15 @@ import 'package:e_learing/core/utils/app_styles.dart';
 import 'package:flutter/material.dart';
 
 class CoursePrice extends StatelessWidget {
-  const CoursePrice({super.key});
+  const CoursePrice({super.key, required this.price});
+  final String price;
 
   @override
   Widget build(BuildContext context) {
     return Row(
       children: [
         Text(
-          'EGP 399',
+          price,
           style: AppStyles.poppinsStylebold20,
         ),
         const SizedBox(

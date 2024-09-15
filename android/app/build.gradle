@@ -9,6 +9,8 @@ plugins {
 }
 
 android {
+    compileSdkVersion 33
+
     namespace = "com.example.elearning"
     compileSdk = flutter.compileSdkVersion
     ndkVersion = flutter.ndkVersion

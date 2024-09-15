@@ -84,7 +84,9 @@ class _AddCourseViewState extends State<AddCourseView> {
               type: AlertType.error,
               title: s.error_title,
               description: state.errMessage,
-              onPressed: () {},
+              onPressed: () {
+                Navigator.pop(context);
+              },
               actionTitle: s.ok);
         }
       },
@@ -159,6 +161,17 @@ class _AddCourseViewState extends State<AddCourseView> {
                         subTitleController.text,
                         image!,
                       ));
+                    }
+                    else{
+                      showCustomAlert(
+                          context: context,
+                          type: AlertType.warning,
+                          title: 'there was wrong',
+                          description: 'Not Allowed upload Empty Course',
+                          onPressed: () {
+                            Navigator.pop(context);
+                          },
+                          actionTitle: 'Ok');
                     }
                   },
                 )

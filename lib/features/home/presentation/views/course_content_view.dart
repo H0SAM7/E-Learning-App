@@ -1,25 +1,28 @@
-import 'package:e_learing/features/home/presentation/widgets/content_list_view.dart';
-import 'package:e_learing/features/home/presentation/widgets/course_content_header.dart';
+import 'package:e_learing/core/models/course_model.dart';
+import 'package:e_learing/features/home/presentation/views/widgets/content_list_view.dart';
+import 'package:e_learing/features/home/presentation/views/widgets/course_content_header.dart';
 import 'package:flutter/material.dart';
 
 class CourseContentView extends StatelessWidget {
-  const CourseContentView({super.key});
+  const CourseContentView({super.key, });
   static String id = 'CourseContentView';
 
   @override
   Widget build(BuildContext context) {
+      final CourseModel courseModel = ModalRoute.of(context)!.settings.arguments as CourseModel;
+
     return Scaffold(
       appBar: AppBar(),
-      body: const Padding(
-        padding: EdgeInsets.all(16.0),
+      body:  Padding(
+        padding: const EdgeInsets.all(16.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            CourseContentHeader(),
-            SizedBox(
+            const CourseContentHeader(),
+            const SizedBox(
               height: 10,
             ),
-          Expanded(child: ContentListView()),
+          Expanded(child: ContentListView(courseModel: courseModel,)),
           // Expanded(child: ContentVideosListView()),
           ],
         ),
