@@ -1,4 +1,4 @@
-import 'package:e_learing/features/home/presentation/manager/get_cubit/get_courses_cubit.dart';
+import 'package:e_learing/features/home/presentation/manager/get_courses_cubit/get_courses_cubit.dart';
 import 'package:e_learing/features/home/presentation/views/widgets/course_item.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';

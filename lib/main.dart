@@ -6,6 +6,7 @@ import 'package:e_learing/features/auth/manager/auth_cubit/auth_cubit.dart';
 import 'package:e_learing/features/auth/presentation/views/login_view.dart';
 import 'package:e_learing/features/auth/presentation/views/register_view.dart';
 import 'package:e_learing/features/auth/presentation/views/verification_view.dart';
+import 'package:e_learing/features/home/presentation/manager/get_quiz_cubit/get_quizs_cubit.dart';
 import 'package:e_learing/features/home/presentation/views/course_content_view.dart';
 import 'package:e_learing/features/home/presentation/views/home_view.dart';
 import 'package:e_learing/features/home/presentation/views/widgets/bottom_navigator_bar.dart';
@@ -47,6 +48,9 @@ class ELearing extends StatelessWidget {
         ),
         BlocProvider(
           create: (context) => LanguageCubit(),
+        ),
+         BlocProvider(
+          create: (context) => GetQuizsCubit(),
         ),
       ],
       child: BlocBuilder<LanguageCubit, Locale>(
