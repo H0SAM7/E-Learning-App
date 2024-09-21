@@ -1,18 +1,8 @@
 import 'package:e_learing/bloc_observer.dart';
+import 'package:e_learing/core/routes/app_routes.dart';
 import 'package:e_learing/features/admin/manager/admin_cubit/admin_cubit.dart';
-import 'package:e_learing/features/admin/views/add_course_view.dart';
-import 'package:e_learing/features/admin/views/add_quiz_view.dart';
 import 'package:e_learing/features/auth/manager/auth_cubit/auth_cubit.dart';
-import 'package:e_learing/features/auth/presentation/views/login_view.dart';
-import 'package:e_learing/features/auth/presentation/views/register_view.dart';
-import 'package:e_learing/features/auth/presentation/views/verification_view.dart';
 import 'package:e_learing/features/home/presentation/manager/get_quiz_cubit/get_quizs_cubit.dart';
-import 'package:e_learing/features/home/presentation/views/course_content_view.dart';
-import 'package:e_learing/features/home/presentation/views/home_view.dart';
-import 'package:e_learing/features/home/presentation/views/widgets/bottom_navigator_bar.dart';
-import 'package:e_learing/features/splash/views/start_view.dart';
-import 'package:e_learing/features/video/views/pod_player.dart';
-import 'package:e_learing/features/video/views/video_view.dart';
 import 'package:e_learing/firebase_options.dart';
 import 'package:e_learing/generated/l10n.dart';
 import 'package:e_learing/system_cubits/lang_cubit.dart';
@@ -72,24 +62,9 @@ class ELearing extends StatelessWidget {
               Locale('ar', ''),
             ],
             locale: context.watch<LanguageCubit>().state,
-            routes: {
-              HomeView.id: (context) => const HomeView(),
-              CourseContentView.id: (context) => const CourseContentView(),
-              VideoView.id: (context) => const VideoView(),
-              //  YoutubeVideoPlayer.id: (context) => const YoutubeVideoPlayer(),
-              //  VideoViewSection.id:(context)=>VideoViewSection(),
-              RegisterView.id: (context) => const RegisterView(),
-              LoginView.id: (context) => const LoginView(),
-              StartView.id: (context) => const StartView(),
-              VerificationView.id: (context) => const VerificationView(),
-              AddCourseView.id: (context) => const AddCourseView(),
-              PlayVideoFromYoutube.id: (context) =>
-                  const PlayVideoFromYoutube(),
-              BottomNavigator.id: (context) => const BottomNavigator(),
-                  AddQuizView.id: (context) => const AddQuizView(),
-            },
+            routes:AppRoutes.routes,
             debugShowCheckedModeBanner: false,
-            initialRoute: StartView.id,
+            initialRoute: AppRoutes.initialRoute,
           );
         },
       ),
@@ -98,5 +73,7 @@ class ELearing extends StatelessWidget {
 }
 
 bool isArabic(BuildContext context) {
+
   return Localizations.localeOf(context).languageCode == 'ar';
+
 }

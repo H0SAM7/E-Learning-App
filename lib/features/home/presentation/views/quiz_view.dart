@@ -1,4 +1,5 @@
 
+import 'package:e_learing/features/home/presentation/views/quiz_card_view.dart';
 import 'package:e_learing/features/home/presentation/views/widgets/quiz_list_view.dart';
 import 'package:flutter/material.dart';
 
@@ -14,7 +15,8 @@ class Quizes extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
      //  Center(child: Text('No Quiz Available Now',style: TextStyle(fontSize: 25),)),
-     Expanded(child: QuizListView())
+    Expanded(child: QuizListView())
+    //QuizCardView()
         ],
       ),
     );
