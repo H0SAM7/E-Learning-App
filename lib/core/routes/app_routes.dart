@@ -1,3 +1,4 @@
+import 'package:e_learing/features/home/presentation/views/notificatins_view.dart';
 import 'package:flutter/widgets.dart';
 import 'package:e_learing/features/admin/views/add_course_view.dart';
 import 'package:e_learing/features/admin/views/add_quiz_view.dart';
@@ -28,5 +29,7 @@ abstract class AppRoutes {
     PlayVideoFromYoutube.id: (context) => const PlayVideoFromYoutube(),
     BottomNavigator.id: (context) => const BottomNavigator(),
     AddQuizView.id: (context) => const AddQuizView(),
+        NotificatinsView.id: (context) => const NotificatinsView(),
+
   };
 }
