@@ -15,8 +15,12 @@ class GetQuizsCubit extends Cubit<GetQuizsState> {
     emit(GetQuizsLoading());
     try {
       QuerySnapshot querySnapshot = await firestore.collection('Quiz').get();
-      List<QuizModel> quizes =
-          querySnapshot.docs.map((doc) => QuizModel.fromDocument(doc)).toList();
+      // List<QuizModel> quizes =
+      //     querySnapshot.docs.map((doc) => QuizModel.fromDocument(doc)).toList();
+      List<QuizModel> quizes = querySnapshot.docs
+          .map((doc) => QuizModel.fromMap(doc.data()! as Map<String, dynamic>))
+          .toList();
+
       emit(
         GetQuizsSuccess(quizs: quizes),
       );

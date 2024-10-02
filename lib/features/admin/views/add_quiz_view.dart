@@ -1,13 +1,13 @@
 import 'package:e_learing/constants.dart';
 import 'package:e_learing/core/models/quission_model.dart';
 import 'package:e_learing/core/models/quiz_model.dart';
+import 'package:e_learing/core/utils/app_styles.dart';
 import 'package:e_learing/core/widgets/custom_alert.dart';
 import 'package:e_learing/core/widgets/custom_button.dart';
 import 'package:e_learing/core/widgets/loading_dialog.dart';
 import 'package:e_learing/features/admin/manager/admin_cubit/admin_cubit.dart';
 import 'package:e_learing/features/auth/presentation/widgets/custom_text_field.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:rflutter_alert/rflutter_alert.dart';
 
@@ -22,6 +22,9 @@ class AddQuizView extends StatefulWidget {
 class _AddQuizViewState extends State<AddQuizView> {
   final TextEditingController createorController = TextEditingController();
   GlobalKey<FormState> fromKey = GlobalKey<FormState>();
+  final TextEditingController quizTitleController = TextEditingController();
+  final TextEditingController quizTimeController = TextEditingController();
+
   final TextEditingController qussionController = TextEditingController();
   final TextEditingController answerA = TextEditingController();
   final TextEditingController answerB = TextEditingController();
@@ -37,7 +40,9 @@ class _AddQuizViewState extends State<AddQuizView> {
     answerB.dispose();
     answerC.dispose();
     answerD.dispose();
+    quizTimeController.dispose();
     correctAnswer.dispose();
+    quizTitleController.dispose();
 
     super.dispose();
   }
@@ -63,13 +68,30 @@ class _AddQuizViewState extends State<AddQuizView> {
         }
       },
       child: Scaffold(
-        appBar: AppBar(),
+        appBar: AppBar(
+          elevation: 0,
+          backgroundColor: Colors.white,
+          title: Text(
+            "Add Quiz",
+            style: AppStyles.styleMeduim24,
+          ),
+        ),
         body: SingleChildScrollView(
           child: Form(
             key: fromKey,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
+                CustomTextFrom(
+                  label: ' Quiz Title',
+                  hint: 'Enter your quiz Title',
+                  controller: quizTitleController,
+                ),
+                CustomTextFrom(
+                  label: ' Quiz Time',
+                  hint: 'Enter your quiz Time as mintus',
+                  controller: quizTimeController,
+                ),
                 CustomTextFrom(
                   label: ' The Quission',
                   hint: 'Enter your Quission',
@@ -126,9 +148,15 @@ class _AddQuizViewState extends State<AddQuizView> {
                   txtColor: Colors.white,
                   onTap: () async {
                     if (quissions.isNotEmpty) {
-                      await BlocProvider.of<AdminCubit>(context)
-                          .addQuiz(quizModel: QuizModel(quiz: quissions));
+                      await BlocProvider.of<AdminCubit>(context).addQuiz(
+                        quizModel: QuizModel(
+                          quizTime: quizTimeController.text as int,
+                          quiz: quissions,
+                          quizTitle: quizTitleController.text,
+                        ),
+                      );
                       quissions.clear();
+                      Navigator.pop(context);
                     } else {
                       showCustomAlert(
                           context: context,

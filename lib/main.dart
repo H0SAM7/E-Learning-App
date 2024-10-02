@@ -10,6 +10,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:firebase_messaging/firebase_messaging.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -18,7 +19,12 @@ void main() async {
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
-
+  FirebaseMessaging messaging = FirebaseMessaging.instance;
+  NotificationSettings settings = await messaging.requestPermission(
+    alert: true,
+    badge: true,
+    sound: true,
+  );
  
   runApp(const ELearing());
 }
@@ -40,7 +46,7 @@ class ELearing extends StatelessWidget {
           create: (context) => LanguageCubit(),
         ),
          BlocProvider(
-          create: (context) => GetQuizsCubit(),
+          create: (context) => GetQuizsCubit()..getQuizs(),
         ),
       ],
       child: BlocBuilder<LanguageCubit, Locale>(

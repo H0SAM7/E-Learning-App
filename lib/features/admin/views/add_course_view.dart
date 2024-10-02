@@ -1,5 +1,6 @@
 import 'package:e_learing/constants.dart';
 import 'package:e_learing/core/models/course_model.dart';
+import 'package:e_learing/core/utils/app_styles.dart';
 import 'package:e_learing/core/widgets/custom_alert.dart';
 import 'package:e_learing/core/widgets/custom_button.dart';
 import 'package:e_learing/core/widgets/loading_dialog.dart';
@@ -91,10 +92,14 @@ class _AddCourseViewState extends State<AddCourseView> {
         }
       },
       child: Scaffold(
-        appBar: AppBar(
-          centerTitle: true,
-          title: Text(s.add_course),
+         appBar: AppBar(
+        elevation: 0,
+        backgroundColor: Colors.white,
+        title: Text(
+         s.add_course,
+          style: AppStyles.styleMeduim24,
         ),
+      ),
         body: SingleChildScrollView(
           child: Form(
             key: fromKey,

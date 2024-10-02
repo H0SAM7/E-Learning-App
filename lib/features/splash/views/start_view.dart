@@ -7,7 +7,7 @@ import 'package:e_learing/core/widgets/custom_button.dart';
 import 'package:e_learing/features/auth/presentation/views/register_view.dart';
 import 'package:e_learing/features/auth/presentation/views/verification_view.dart';
 import 'package:e_learing/features/home/presentation/views/home_view.dart';
-import 'package:e_learing/features/home/presentation/views/widgets/bottom_navigator_bar.dart';
+import 'package:e_learing/bottom_navigator_bar.dart';
 import 'package:e_learing/generated/l10n.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';

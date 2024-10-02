@@ -1,4 +1,6 @@
-import 'package:e_learing/features/home/presentation/views/notificatins_view.dart';
+import 'package:e_learing/features/Notifications/views/notifi_view.dart';
+import 'package:e_learing/features/home/presentation/views/attemp_quiz_view.dart';
+import 'package:e_learing/features/home/presentation/views/quiz_result_view.dart';
 import 'package:flutter/widgets.dart';
 import 'package:e_learing/features/admin/views/add_course_view.dart';
 import 'package:e_learing/features/admin/views/add_quiz_view.dart';
@@ -7,7 +9,7 @@ import 'package:e_learing/features/auth/presentation/views/register_view.dart';
 import 'package:e_learing/features/auth/presentation/views/verification_view.dart';
 import 'package:e_learing/features/home/presentation/views/course_content_view.dart';
 import 'package:e_learing/features/home/presentation/views/home_view.dart';
-import 'package:e_learing/features/home/presentation/views/widgets/bottom_navigator_bar.dart';
+import 'package:e_learing/bottom_navigator_bar.dart';
 import 'package:e_learing/features/splash/views/start_view.dart';
 import 'package:e_learing/features/video/views/pod_player.dart';
 import 'package:e_learing/features/video/views/video_view.dart';
@@ -29,7 +31,9 @@ abstract class AppRoutes {
     PlayVideoFromYoutube.id: (context) => const PlayVideoFromYoutube(),
     BottomNavigator.id: (context) => const BottomNavigator(),
     AddQuizView.id: (context) => const AddQuizView(),
-        NotificatinsView.id: (context) => const NotificatinsView(),
+    NotifiView.id: (context) => const NotifiView(),
+    AttempQuizView.id: (context) => const AttempQuizView(),
+        QuizResultView.id: (context) => const QuizResultView(),
 
   };
 }

@@ -9,15 +9,20 @@ void showCustomAlert({
   required String description,
   required VoidCallback onPressed,
     required String actionTitle,
+     Function? closeFunction,
 
 }) {
+  
   Alert(
     context: context,
     type: type,
     title: title,
     desc: description,
+    onWillPopActive: true,
+    closeFunction: closeFunction,
     buttons: [
       DialogButton(
+        
         onPressed: onPressed,
         width: 120,
         child: Text(
