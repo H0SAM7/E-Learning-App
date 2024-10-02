@@ -14,7 +14,7 @@ import 'package:rflutter_alert/rflutter_alert.dart';
 
 class NotifactionsSendView extends StatefulWidget {
   const NotifactionsSendView({super.key});
-
+  static String id = 'NotifactionsSendView';
   @override
   _NotifactionsSendViewState createState() => _NotifactionsSendViewState();
 }
@@ -40,7 +40,7 @@ class _NotifactionsSendViewState extends State<NotifactionsSendView> {
   Future<void> getAccessToken() async {
     try {
       final serviceAccountJson = await rootBundle.loadString(
-          'assets/files/x-ray-2c7c1-firebase-adminsdk-797z4-9805dcd09d.json');
+          'assets/files/educationapp-842af-firebase-adminsdk-9uxdl-b965004fc3.json');
 
       final accountCredentials = ServiceAccountCredentials.fromJson(
         json.decode(serviceAccountJson),
@@ -121,7 +121,9 @@ class _NotifactionsSendViewState extends State<NotifactionsSendView> {
                       Navigator.pop(context);
                     },
                     actionTitle: 'Ok');
+
                 log('send message done');
+                Navigator.pop(context);
               } catch (e) {
                 log('send message err:$e');
               }

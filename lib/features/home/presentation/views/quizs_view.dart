@@ -40,7 +40,7 @@ class Quizes extends StatelessWidget {
           //Expanded(child: QuizListView()),
            return Center(
               child: Text(
-            'Something went wrong',
+            'No Quiz Available Now',
             style: TextStyle(fontSize: 25),
           ));
         }

@@ -1,3 +1,4 @@
+import 'package:e_learing/features/Notifications/services/send_notifications_view.dart';
 import 'package:e_learing/features/Notifications/views/notifi_view.dart';
 import 'package:e_learing/features/home/presentation/views/attemp_quiz_view.dart';
 import 'package:e_learing/features/home/presentation/views/quiz_result_view.dart';
@@ -14,6 +15,7 @@ import 'package:e_learing/features/splash/views/start_view.dart';
 import 'package:e_learing/features/video/views/pod_player.dart';
 import 'package:e_learing/features/video/views/video_view.dart';
 import 'package:flutter/material.dart';
+
 
 abstract class AppRoutes {
   static String? initialRoute = BottomNavigator.id;
@@ -34,6 +36,8 @@ abstract class AppRoutes {
     NotifiView.id: (context) => const NotifiView(),
     AttempQuizView.id: (context) => const AttempQuizView(),
         QuizResultView.id: (context) => const QuizResultView(),
+                NotifactionsSendView.id: (context) => const NotifactionsSendView(),
+
 
   };
 }

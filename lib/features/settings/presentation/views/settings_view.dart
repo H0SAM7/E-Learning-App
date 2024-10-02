@@ -1,4 +1,5 @@
 import 'package:e_learing/core/utils/app_styles.dart';
+import 'package:e_learing/features/Notifications/services/send_notifications_view.dart';
 import 'package:e_learing/features/admin/views/add_course_view.dart';
 import 'package:e_learing/features/admin/views/add_quiz_view.dart';
 import 'package:e_learing/features/settings/presentation/views/widgets/items_setting.dart';
@@ -16,7 +17,7 @@ class SettingsView extends StatelessWidget {
         elevation: 0,
         backgroundColor: Colors.white,
         title: Text(
-          "Settinga",
+          "Settings",
           style: AppStyles.styleMeduim24,
         ),
        
@@ -40,6 +41,17 @@ class SettingsView extends StatelessWidget {
             prefixIcon: Icons.quiz,
             onTap: () {
               Navigator.pushNamed(context, AddQuizView.id);
+            },
+            suffixIcon: const SizedBox(),
+          ),
+          const Divider(
+            thickness: .4,
+          ),
+          ItemSetting(
+            title: 'Send Notification',
+            prefixIcon: Icons.notification_add,
+            onTap: () {
+              Navigator.pushNamed(context, NotifactionsSendView.id);
             },
             suffixIcon: const SizedBox(),
           ),

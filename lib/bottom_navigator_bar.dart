@@ -5,7 +5,6 @@ import 'package:e_learing/features/home/presentation/views/home_view.dart';
 import 'package:e_learing/features/home/presentation/views/quizs_view.dart';
 import 'package:e_learing/features/settings/presentation/views/settings_view.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 
 class BottomNavigator extends StatefulWidget {
   const BottomNavigator({super.key});
@@ -21,7 +20,7 @@ class _BottomNavigatorState extends State<BottomNavigator> {
   static const List<Widget> _widgetOptions = <Widget>[
     HomeView(),
     Quizes(),
-    NotifiView(),
+
     SettingsView(),
   ];
 
@@ -46,8 +45,7 @@ class _BottomNavigatorState extends State<BottomNavigator> {
         items: <BottomNavigationBarItem>[
           _buildBottomNavigationBarItem(Icons.home, 'Home', 0),
           _buildBottomNavigationBarItem(Icons.quiz, 'Quizs', 1),
-          _buildBottomNavigationBarItem(Icons.notifications, 'Notifications', 2),
-          _buildBottomNavigationBarItem(Icons.settings, 'Settings', 3),
+          _buildBottomNavigationBarItem(Icons.settings, 'Settings', 2),
         ],
         currentIndex: _selectedIndex,
         selectedItemColor: blueBlackColor,

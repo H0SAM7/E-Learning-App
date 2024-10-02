@@ -7,9 +7,9 @@ import 'package:e_learing/features/auth/manager/auth_cubit/auth_cubit.dart';
 import 'package:e_learing/features/auth/presentation/widgets/custom_send_button.dart';
 import 'package:e_learing/features/auth/presentation/widgets/custom_text_field.dart';
 import 'package:e_learing/features/auth/presentation/widgets/google_button.dart';
-import 'package:e_learing/features/home/presentation/views/home_view.dart';
 import 'package:e_learing/bottom_navigator_bar.dart';
 import 'package:e_learing/generated/l10n.dart';
+import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:rflutter_alert/rflutter_alert.dart';
@@ -113,6 +113,8 @@ class _LoginViewState extends State<LoginView> {
                                   await BlocProvider.of<AuthCubit>(context)
                                       .login(
                                           email: email!, password: password!);
+                                          await FirebaseMessaging.instance.subscribeToTopic('weather');
+
                                 }
                               },
                             ),
@@ -123,6 +125,8 @@ class _LoginViewState extends State<LoginView> {
                               onTap: () async {
                                 await BlocProvider.of<AuthCubit>(context)
                                     .signInWithGoogle();
+                                    await FirebaseMessaging.instance.subscribeToTopic('weather');
+
                               },
                             ),
                             const SizedBox(

@@ -1,6 +1,7 @@
 import 'package:e_learing/constants.dart';
 import 'package:e_learing/core/utils/app_images.dart';
 import 'package:e_learing/core/utils/app_styles.dart';
+import 'package:e_learing/features/Notifications/views/notifi_view.dart';
 import 'package:e_learing/features/home/presentation/manager/get_courses_cubit/get_courses_cubit.dart';
 import 'package:e_learing/features/home/presentation/views/widgets/course_list_view.dart';
 import 'package:e_learing/features/home/presentation/views/widgets/custom_drawer.dart';
@@ -25,6 +26,14 @@ class HomeView extends StatelessWidget {
             Assets.imagesLogo2,
             height: 80,
           ),
+          actions: [
+         Padding(
+           padding: const EdgeInsets.all(8.0),
+           child: CustomNotificationButton(onPressed: (){
+             Navigator.pushNamed(context, NotifiView.id);
+           },),
+         )
+          ],
         ),
         body: const Column(
           children: [
@@ -69,7 +78,9 @@ class DetailsSection extends StatelessWidget {
                       fontSize: 20,
                       fontWeight: FontWeight.w300)),
               trailing: CustomNotificationButton(
-                onPressed: () {},
+                onPressed: () {
+                   Navigator.pushNamed(context, NotifiView.id);
+                },
               ),
             ),
             const SizedBox(

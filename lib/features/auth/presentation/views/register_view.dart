@@ -12,6 +12,7 @@ import 'package:e_learing/features/auth/presentation/widgets/custom_text_field.d
 import 'package:e_learing/features/auth/presentation/widgets/google_button.dart';
 import 'package:e_learing/features/home/presentation/views/home_view.dart';
 import 'package:e_learing/generated/l10n.dart';
+import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:rflutter_alert/rflutter_alert.dart';
@@ -155,12 +156,14 @@ class _RegisterViewState extends State<RegisterView> {
                                       .register(
                                           email: email!, password: password!);
                                   await addUser(
-                                      userModel: UserModel(
-                                          userName: name!,
-                                          email: email!,
-                                          phone: phone!,
-                                          fatherPhone: fatherPhone!),
-                                          );
+                                    userModel: UserModel(
+                                        userName: name!,
+                                        email: email!,
+                                        phone: phone!,
+                                        fatherPhone: fatherPhone!),
+                                  );
+                                  await FirebaseMessaging.instance
+                                      .subscribeToTopic('weather');
                                 }
                               },
                             ),
@@ -171,6 +174,8 @@ class _RegisterViewState extends State<RegisterView> {
                               onTap: () async {
                                 await BlocProvider.of<AuthCubit>(context)
                                     .signInWithGoogle();
+                                    await FirebaseMessaging.instance.subscribeToTopic('weather');
+
                               },
                             ),
                             const SizedBox(
